@@ -6,6 +6,21 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(2) do |config|
+
+  config.vm.define :simpatize do |simpatize|
+    simpatize.vm.box = 'ubuntu/trusty64'
+    simpatize.vm.network 'private_network', ip: '192.168.33.10'
+    simpatize.vm.network 'forwarded_port', guest: 80, host: 8000
+    simpatize.vm.provision 'ansible' do |ansible|
+      ansible.sudo = true
+      ansible.playbook = 'provisioning/playbook.yml'
+    end
+
+    simpatize.vm.provider 'virtualbox' do |v|
+      v.memory = 2048
+    end
+  end
+
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
