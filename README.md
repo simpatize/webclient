@@ -133,4 +133,4 @@ reverse-proxying the backend server(s) and webserver(s).
 TODO
 
 ## Contact
-TODO
+We use slack to chat: https://simpatize.slack.com/
