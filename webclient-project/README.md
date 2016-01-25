@@ -12,7 +12,14 @@ TODO: description
 
 ```
 git clone https://github.com/simpatize/webclient.git
-cd webclient 
+cd webclient
+```
+### Start vagrant machine
+
+```
+vagrant up
+vagrant ssh
+cd webclient-project
 ```
 
 ### Install Dependencies
@@ -35,7 +42,7 @@ this server is:
 npm start
 ```
 
-Now browse to the app at `http://localhost:8000/app/index.html`.
+Now browse to the app at `http://192.168.33.10:8080/app/index.html`.
 
 
 ## Directory Layout
