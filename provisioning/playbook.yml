@@ -1,3 +1,17 @@
 - hosts: all
   sudo: true
   tasks:
+    - name: Install git package
+      apt: pkg=git state=present update_cache=yes
+
+    - name: Repository for nodejs
+      shell: curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+
+    - name: Install nodejs and npm
+      shell: sudo apt-get install -y nodejs
+
+    - name: Install package build-essencial for nodejs
+      shell: sudo apt-get install -y build-essential
+ 
+    - name: Install packages from package.json
+      npm: path=/home/vagrant/webclient-project
