@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.places', ['ngRoute'])
+angular.module('places.controller', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/places', {
     templateUrl: 'places/places.html',
-    controller: 'PlacesCtrl as ctrl'
+    controller: 'PlacesController as ctrl'
   });
 }])
 
-.controller('PlacesCtrl', [function() {
+.controller('PlacesController', [function() {
 	var self = this;
 	self.search_string = "";
 

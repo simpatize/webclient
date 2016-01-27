@@ -1,11 +1,11 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+angular.module('webClient', [
   'ngRoute',
-  'myApp.places',
-  'myApp.view2',
-  'myApp.version'
+  'places.controller',
+  'webClient.view2',
+  'webClient.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/places'});
