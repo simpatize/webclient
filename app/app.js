@@ -4,7 +4,6 @@
 angular.module('webClient', [
   'ngRoute',
   'places.controller',
-  'webClient.view2',
   'webClient.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
