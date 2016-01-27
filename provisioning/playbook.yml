@@ -14,4 +14,6 @@
       shell: sudo apt-get install -y build-essential
  
     - name: Install packages from package.json
-      npm: path=/home/vagrant/webclient-project
+      npm: path=/home/vagrant/webclient
+    - name: Go to vangrant folder
+      shell: echo "cd /webclient" >> .bash_profile
