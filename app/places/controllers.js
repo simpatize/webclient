@@ -9,15 +9,14 @@ angular.module('places.controllers', ['ngRoute'])
   });
 }])
 
-.controller('PlacesListController', [function() {
+.controller('PlacesListController', ['Place', function(Place) {
 	var self = this;
-	self.search_string = "";
+
+	self.search_text = "";
+	self.places = [];
 
 	self.search = function (){
-		console.log('fui la na API do google e pesquisei por: ' + self.search_string);
-		// places = API.search()
-	}
-	var json = [{"placeName": "Iguatu"}, {"placeName": "Natal"}];
-	//self.placesList = PlacesList.query();
+		self.places = Place.query(self.search_text);
+	};
 
 }]);

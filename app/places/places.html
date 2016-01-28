@@ -1,8 +1,7 @@
 <div>
-<input ng-model="ctrl.search_string"></input>
+<input ng-model="ctrl.search_text"></input>
 <button ng-click="ctrl.search()">search</button>
-<textarea name="search_result" ng-model="place.result"></textarea>
-<ul ng-repeat="place in ctrl.placesList">
-	<li>{{place.placeName}}</li>
+<ul ng-repeat="place in ctrl.places">
+	<li>{{place.id}}</li>
 </ul>
 </div>
