@@ -19,7 +19,6 @@ cd webclient
 ```
 vagrant up
 vagrant ssh
-cd webclient-project
 ```
 
 ### Install Dependencies
