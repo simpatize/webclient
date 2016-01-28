@@ -2,8 +2,7 @@
 <input ng-model="ctrl.search_string"></input>
 <button ng-click="ctrl.search()">search</button>
 <textarea name="search_result" ng-model="place.result"></textarea>
-<ul>
-	<li>Medabots!</li>
-	<li>To the top!</li>
+<ul ng-repeat="place in ctrl.placesList">
+	<li>{{place.placeName}}</li>
 </ul>
 </div>

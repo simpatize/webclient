@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('places.controller', ['ngRoute'])
+angular.module('places.Controller', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/places', {
@@ -9,7 +9,7 @@ angular.module('places.controller', ['ngRoute'])
   });
 }])
 
-.controller('PlacesController', [function() {
+.controller('PlacesController', ['PlacesList', function(PlacesList) {
 	var self = this;
 	self.search_string = "";
 
@@ -17,5 +17,7 @@ angular.module('places.controller', ['ngRoute'])
 		console.log('fui la na API do google e pesquisei por: ' + self.search_string);
 		// places = API.search()
 	}
+	var json = [{"placeName": "Iguatu"}, {"placeName": "Natal"}];
+	//self.placesList = PlacesList.query();
 
 }]);
