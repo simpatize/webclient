@@ -1,14 +1,14 @@
 'use strict';
 
-describe('places.controller module', function() {
+describe('places.controllers module', function() {
 
-  beforeEach(module('places.controller'));
+  beforeEach(module('places.controllers'));
 
   describe('places controller', function(){
 
     it('should ....', inject(function($controller) {
       //spec body
-      var PlacesController = $controller('PlacesController');
+      var PlacesController = $controller('PlacesListController');
       expect(PlacesController).toBeDefined();
     }));
 

@@ -3,8 +3,8 @@
 // Declare app level module which depends on views, and components
 angular.module('webClient', [
   'ngRoute',
-  'places.Controller',
-  'places.Services',
+  'places.controllers',
+  'places.services',
   'webClient.version'
 ]).
 config(['$routeProvider', function($routeProvider) {

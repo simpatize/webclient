@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('places.Services', ['ngResource'])
+angular.module('places.services', ['ngResource'])
 
-.factory('PlacesList', ['$resource',
+.factory('Place', ['$resource',
   function($resource){
     return $resource('places/', {}, {
       query: {method:'GET', isArray:true}
