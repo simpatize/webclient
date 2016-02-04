@@ -7,4 +7,5 @@ angular.module('places.services', ['ngResource'])
     return $resource('/places', {}, {
       query: {method:'GET', isArray:true}
     });
+    
   }]);
