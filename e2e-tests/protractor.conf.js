@@ -9,7 +9,7 @@ exports.config = {
     'browserName': 'phantomjs'
   },
 
-  baseUrl: 'http://192.168.33.10:8080/app/',
+  baseUrl: 'http://0.0.0.0:8000/app/',
 
   framework: 'jasmine',
 
