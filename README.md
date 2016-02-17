@@ -1,4 +1,7 @@
 # simpatize-webclient — a Simpatize AngularJS client  
+[![Build
+Status](https://snap-ci.com/simpatize/webclient/branch/master/build_image)](https://snap-ci.com/simpatize/webclient/branch/master)
+
 
 TODO: description
 
