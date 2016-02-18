@@ -1,14 +1,17 @@
-describe('Place Services', function() {
-	beforeEach(module('places.services'));
+'use strict';
+
+describe('PlacesService', function() {
+	
+	beforeEach(module('webClient.places'));
 
 	var service, mockBackend;
 
-	beforeEach(inject(function($httpBackend, Place) {
+	beforeEach(inject(function($httpBackend, PlacesService) {
 		mockBackend = $httpBackend;
 		mockBackend.expectGET('/places')
 			.respond([{place_id: 100}]);
 
-		service = Place;
+		service = PlacesService;
 	}));
 
 	it('should make a http request to /places', function(){
@@ -20,5 +23,4 @@ describe('Place Services', function() {
 		expect(places[0].place_id).toBe(100);	
 
 	});
-
 });

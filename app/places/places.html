@@ -1,7 +1,9 @@
 <div>
-<input ng-model="ctrl.search_text"></input>
-<button ng-click="ctrl.search()">search</button>
-<ul ng-repeat="place in ctrl.places">
-	<li>{{place.id}}</li>
-</ul>
+	<input ng-model="placesCtrl.search_text"></input>
+
+	<button ng-click="placesCtrl.search()">search</button>
+
+	<ul ng-repeat="place in placesCtrl.places">
+		<li>{{place.id}}</li>
+	</ul>
 </div>
