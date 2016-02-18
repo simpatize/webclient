@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-	.module('webClient.places', ['ngRoute', 'ngResource'])
+	.module('webClient.places', ['ngRoute', 'ngResource', 'ui.select', 'ngSanitize'])
 	.config(config);
 
 function config($routeProvider) {
