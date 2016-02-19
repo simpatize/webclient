@@ -5,12 +5,13 @@ angular
 	.controller('PlacesController', PlacesController);
 
 function PlacesController(PlacesService) {
+
+	this.selectedType = {};
+	this.places = [];
+
 	var self = this;
 
-	self.search_text = "";
-	self.places = [];
-
-	self.search = function () {
-		self.places = PlacesService.query(self.search_text);
+	this.search = function () {
+		self.places = PlacesService.query(self.selectedType);
 	};
 }

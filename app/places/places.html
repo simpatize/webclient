@@ -1,9 +1,30 @@
-<div>
-	<input ng-model="placesCtrl.search_text"></input>
+<div class="container-fluid">
+	
+	<div class="row no-gutter" ng-init="types=[{name:'Restaurante'}, {name:'Bar'}, {name:'Clinicas'}]">
 
-	<button ng-click="placesCtrl.search()">search</button>
+		<div class="col-md-3">
+			<ui-select 
+				ng-model="selectedType" 
+				theme="bootstrap"> 
 
-	<ul ng-repeat="place in placesCtrl.places">
-		<li>{{place.id}}</li>
-	</ul>
+				<ui-select-match placeholder="Tipo de estabelecimento...">{{$select.selected.name}}</ui-select-match>
+				<ui-select-choices repeat="type in types | filter: $select.search">
+					<span ng-bind="type.name"></span>
+				</ui-select-choices>
+			</ui-select>
+		</div>
+
+		<div class="col-md-3">
+			<button class="btn btn-block btn-primary" ng-click="placesCtrl.search()">
+				Buscar           
+			</button>
+		</div>
+	</div> 
+
+	<div class="row">	
+		<ul ng-repeat="place in placesCtrl.places">
+			<li>{{place.id}}</li>
+		</ul>
+	</div>
+
 </div>

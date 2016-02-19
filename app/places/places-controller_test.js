@@ -1,13 +1,16 @@
 'use strict';
 
-describe('PlacesController', function(){
+describe('PlacesController', function() {
 
   beforeEach(module('webClient.places'));
 
   var placesCtrl, $httpBackend;
 
 	beforeEach(inject(function($controller, PlacesService) {
-		PlacesService.query = function() {return [{name: 'Iguatu', id: 'place_1'}]};
+		PlacesService.query = function() {
+      return [{name: 'Buongustaio', id: 'place_1'}];
+    };
+
 		placesCtrl = $controller('PlacesController', PlacesService);
   }));
 
@@ -16,11 +19,11 @@ describe('PlacesController', function(){
   });
 
   it('should set places when search is called', function() {
-  	placesCtrl.search_text = 'restaurantes';
+  	placesCtrl.selectedType.name = 'Restaurante';
   	placesCtrl.search();
 
-		var expected_places = [{name: 'Iguatu', id: 'place_1'}]
+		var expectedPlaces = [{name: 'Buongustaio', id: 'place_1'}];
 
-		expect(angular.equals(placesCtrl.places, expected_places)).toBe(true);
+		expect(angular.equals(placesCtrl.places, expectedPlaces)).toBe(true);
   });
 });
