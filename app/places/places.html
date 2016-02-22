@@ -1,20 +1,22 @@
-<div class="container-fluid">
-	
-	<div class="row no-gutter" ng-init="types=[{name:'Restaurante'}, {name:'Bar'}, {name:'Clinicas'}]">
+<img class="center-block" id="main-logo" ng-src="contents/logo.png" alt="Simpatize Logo">
 
-		<div class="col-md-3">
+<div class="container-fluid" id="search-container">
+	
+	<div class="row no-gutter">
+
+		<div class="col-md-6">
 			<ui-select 
 				ng-model="selectedType" 
 				theme="bootstrap"> 
 
-				<ui-select-match placeholder="Tipo de estabelecimento...">{{$select.selected.name}}</ui-select-match>
+				<ui-select-match placeholder="Tipo de estabelecimento...">{{ $select.selected.name }}</ui-select-match>
 				<ui-select-choices repeat="type in types | filter: $select.search">
 					<span ng-bind="type.name"></span>
 				</ui-select-choices>
 			</ui-select>
 		</div>
 
-		<div class="col-md-3">
+		<div class="col-md-6">
 			<button class="btn btn-block btn-primary" ng-click="placesCtrl.search()">
 				Buscar           
 			</button>
@@ -22,9 +24,11 @@
 	</div> 
 
 	<div class="row">	
-		<ul ng-repeat="place in placesCtrl.places">
-			<li>{{place.id}}</li>
-		</ul>
+		<div class="list-group">
+			<a href="#" class="list-group-item" ng-repeat="place in placesCtrl.places">
+				{{ place.name }}
+			</a>
+		</div>
 	</div>
 
 </div>
