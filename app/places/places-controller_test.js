@@ -4,12 +4,10 @@ describe('PlacesController', function() {
 
   beforeEach(module('webClient.places'));
 
-  var placesCtrl, $httpBackend;
+  var placesCtrl, placesService;
 
 	beforeEach(inject(function($controller, PlacesService) {
-		PlacesService.query = function() {
-      return [{name: 'Buongustaio', id: 'place_1'}];
-    };
+    placesService = PlacesService;
 
 		placesCtrl = $controller('PlacesController', PlacesService);
   }));
@@ -18,12 +16,13 @@ describe('PlacesController', function() {
 	  expect(placesCtrl.places.length).toBe(0);
   });
 
-  it('should set places when search is called', function() {
-  	placesCtrl.selectedType.name = 'Restaurante';
+  it('should call PlacesService with selected type of place as parameter', function() {
+  	placesCtrl.selectedType = {name:'Restaurante'};
+
+    spyOn(placesService, 'query');
+
   	placesCtrl.search();
 
-		var expectedPlaces = [{name: 'Buongustaio', id: 'place_1'}];
-
-		expect(angular.equals(placesCtrl.places, expectedPlaces)).toBe(true);
+		expect(placesService.query).toHaveBeenCalledWith({type:'Restaurante'});
   });
 });

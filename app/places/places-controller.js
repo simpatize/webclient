@@ -12,6 +12,6 @@ function PlacesController(PlacesService) {
 	var self = this;
 
 	this.search = function () {
-		self.places = PlacesService.query(self.selectedType);
+		self.places = PlacesService.query({type: self.selectedType.name});
 	};
 }
