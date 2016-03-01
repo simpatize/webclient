@@ -27,3 +27,6 @@
 
     - name: Go to webclient folder
       shell: echo "cd ./webclient" >> .bash_profile
+
+    - name: Create environment variables for http-server in package.json
+      shell: sh ./webclient/scripts/set_vagrant_env_vars.sh
