@@ -2,5 +2,6 @@
 
 angular
 	.module('webClient', [
-	  'webClient.places'
+	  'webClient.places',
+		'environment'
 	]);
