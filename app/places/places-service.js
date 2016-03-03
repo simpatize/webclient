@@ -5,6 +5,7 @@ angular
 	.factory('PlacesService', PlacesService);
 
 function PlacesService($resource, envService) {
+	console.log('Hello :)');
 	return $resource(
 		envService.read('baseBackendUrl') + '/places',
 		{},
