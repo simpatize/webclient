@@ -6,11 +6,13 @@ module.exports = function(config){
     files : [
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-route/angular-route.js',
+      'app/bower_components/angular-environment/dist/angular-environment.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/bower_components/angular-resource/angular-resource.js',
       'app/bower_components/angular-ui-select/dist/select.min.js',
       'app/bower_components/angular-sanitize/angular-sanitize.min.js',
-      'app/places/**/*.module.js',
+      'app/config/config.module.js',
+      'app/places/places.module.js',
       'app/places/**/*.js'
     ],
 
