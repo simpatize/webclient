@@ -6,7 +6,7 @@ angular
      envServiceProvider.config({
        domains: {
          development: ['192.168.33.10'],
-         staging: ['simpatize-webclient.herokuapp.com']
+         staging: ['simpatize-webclient-staging.herokuapp.com']
        },
        vars: {
          development: {
