@@ -138,8 +138,8 @@ applicable. Usually this is done by hosting the files by the backend server or t
 reverse-proxying the backend server(s) and webserver(s).
 
 
-## Continuous Integration
-TODO
+## Heroku Deployment Environments
+* Staging Environment: http://simpatize-webclient-staging.herokuapp.com/
 
 ## Contact
 We use slack to chat: https://simpatize.slack.com/
