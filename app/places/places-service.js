@@ -6,8 +6,11 @@ angular
 
 function PlacesService($resource, envService) {
 	return $resource(
-		envService.read('baseBackendUrl') + '/places',
+		envService.read('baseBackendUrl') + '/places/',
 		{},
-		{query: {method:'GET', isArray:true}}
+		{query: {
+			method:'GET',
+			isArray:true
+		}}
 	);
 }

@@ -18,7 +18,7 @@ describe('PlacesService', function() {
 
 	beforeEach(inject(function($httpBackend, PlacesService) {
 		mockBackend = $httpBackend;
-		mockBackend.expectGET('http://myTestBaseUrl/places?type=Restaurante')
+		mockBackend.expectGET('http://myTestBaseUrl/places/?type=Restaurante')
 			.respond([{name: 'Buongustaio'}]);
 
 		service = PlacesService;
