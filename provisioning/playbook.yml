@@ -10,18 +10,9 @@
     - name: Install nodejs and npm
       shell: sudo apt-get install -y nodejs
 
-    - name: Install package build-essencial for nodejs
+    - name: Install package build-essential for nodejs
       shell: sudo apt-get install -y build-essential
     
-    - name: Add JRE ppa
-      apt_repository: repo=ppa:webupd8team/java state=present
-
-    - name: Automatically select the Oracle License
-      shell: echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
-
-    - name: Install JRE
-      apt: pkg=oracle-java7-installer state=latest update-cache=yes force=yes
- 
     - name: Install packages from package.json
       npm: path=/home/vagrant/webclient
 
