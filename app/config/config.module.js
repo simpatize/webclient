@@ -5,12 +5,12 @@ angular
   .config(function(envServiceProvider) {
      envServiceProvider.config({
        domains: {
-         development: ['192.168.33.10'],
+         development: ['localhost'],
          staging: ['simpatize-webclient-staging.herokuapp.com']
        },
        vars: {
          development: {
-           baseBackendUrl: 'http://192.168.33.10:8000',
+           baseBackendUrl: 'http://localhost:8080',
          },
          staging: {
            baseBackendUrl: 'https://simpatize-webservice-staging.herokuapp.com',
@@ -18,5 +18,5 @@ angular
        }
      });
 
-   	envServiceProvider.check();
+     envServiceProvider.check();
  });
